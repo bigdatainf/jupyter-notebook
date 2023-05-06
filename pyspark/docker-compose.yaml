@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  jupyter:
+    image: jupyter/pyspark-notebook
+    volumes:
+      - ./data:/work
+    ports:
+      - 8888:8888
+    command: ["start-notebook.sh",
+              "--NotebookApp.token=''",
+              "--NotebookApp.password=''"]
